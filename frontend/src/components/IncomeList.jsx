@@ -11,7 +11,7 @@ const IncomeList = ({ onChange }) => {
     setError("");
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:5000/api/income", {
+              const res = await fetch("https://finance-backend-g8ab.onrender.com/api/income", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -33,7 +33,7 @@ const IncomeList = ({ onChange }) => {
     if (!window.confirm("Delete this income entry?")) return;
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch(`http://localhost:5000/api/income/${id}`, {
+              const res = await fetch(`https://finance-backend-g8ab.onrender.com/api/income/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });
